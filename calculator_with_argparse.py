@@ -1,8 +1,7 @@
 from itertools import permutations, product
 from typing import Dict, List, Any, Optional, Set
 import argparse
-
-from calculator_functions import functions
+import importlib
 
 
 # Start parameters:
@@ -15,13 +14,16 @@ parser.add_argument('-e', '--ending_number', type=int,
                     help='the number on the calculator at the end, optional')
 parser.add_argument('-r', '--steps_can_repeat', action='store_true',
                     help='include if steps can repeat')
+parser.add_argument('-f', '--functions', default='calculator_functions',
+                    type=str, help='file with possible functions to use')
 args = parser.parse_args()
+
+functions = importlib.import_module(args.functions).functions
 
 assert args.step_max >= args.step_min, (
     "step_max must not be smaller than step_min")
 assert args.steps_can_repeat or args.step_min <= len(functions), (
     "step_min bigger than amount of available steps, and step repetition off")
-
 
 plans: List[Any] = []
 for step_num in range(args.step_min, args.step_max+1):
