@@ -6,10 +6,10 @@ from calculator_functions import functions
 
 
 # Start parameters:
-step_min: int = 1
-step_max: int = 2
-starting_number: float = 1
-ending_number: Optional[float] = None
+step_min: int = 5
+step_max: int = 5
+starting_number: float = 4
+ending_number: Optional[float] = 5  # Set to None to not give an ending_number
 steps_can_repeat = True
 
 assert step_max >= step_min, "step_max must not be smaller than step_min"
