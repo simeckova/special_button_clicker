@@ -15,7 +15,8 @@ parser.add_argument('-e', '--ending_number', type=int,
 parser.add_argument('-r', '--steps_can_repeat', action='store_true',
                     help='include if steps can repeat')
 parser.add_argument('-f', '--functions', default='calculator_functions',
-                    type=str, help='file with possible functions to use')
+                    type=str, help='file with possible functions to use as '
+                    'steps, default = calculator_functions.py')
 args = parser.parse_args()
 
 functions = importlib.import_module(args.functions).functions
@@ -48,5 +49,9 @@ for plan in plans:
             possible_steps[n] = steps
     elif n == args.ending_number:
         possible_steps[n] = steps
+        break
 
-print(possible_outputs)
+if args.ending_number is None:
+    print(possible_outputs)
+else:
+    print(possible_steps)

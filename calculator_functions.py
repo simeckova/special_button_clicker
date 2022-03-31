@@ -1,5 +1,5 @@
 def a(n: float) -> float:
-    return n * 5
+    return n * 2
 
 
 def b(n: float) -> float:
@@ -11,7 +11,7 @@ def c(n: float) -> float:
 
 
 def d(n: float) -> float:
-    return n / 5
+    return n // 3
 
 
-functions = [a, d]
+functions = [a, b, c, d]

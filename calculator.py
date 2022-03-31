@@ -1,10 +1,10 @@
 from itertools import permutations, product
 from typing import Dict, List, Any, Optional, Set
 
+# List of functions that can be used as steps:
 from calculator_functions import functions
 
 
-# argparse, func
 # Start parameters:
 step_min: int = 1
 step_max: int = 2
@@ -39,4 +39,7 @@ for plan in plans:
     elif n == ending_number:
         possible_steps[n] = steps
 
-print(possible_outputs)
+if ending_number is None:
+    print(possible_outputs)
+else:
+    print(possible_steps)
