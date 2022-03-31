@@ -4,7 +4,7 @@ import argparse
 import importlib
 
 
-# Start parameters:
+# Input parameters:
 parser = argparse.ArgumentParser()
 parser.add_argument('step_min', type=int, help='minimal amount of steps')
 parser.add_argument('step_max', type=int, help='maximal amount of steps')
@@ -21,6 +21,7 @@ args = parser.parse_args()
 
 functions = importlib.import_module(args.functions).functions
 
+# Checks the validity of the input parameters:
 assert args.step_max >= args.step_min, (
     "step_max must not be smaller than step_min")
 assert args.steps_can_repeat or args.step_min <= len(functions), (

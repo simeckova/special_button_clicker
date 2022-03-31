@@ -5,13 +5,14 @@ from typing import Dict, List, Any, Optional, Set
 from calculator_functions import functions
 
 
-# Start parameters:
+# Input parameters:
 step_min: int = 5
 step_max: int = 5
 starting_number: float = 4
 ending_number: Optional[float] = 5  # Set to None to not give an ending_number
 steps_can_repeat = True
 
+# Checks the validity of the input parameters:
 assert step_max >= step_min, "step_max must not be smaller than step_min"
 assert steps_can_repeat or step_min <= len(functions), "repeat off - few steps"
 
