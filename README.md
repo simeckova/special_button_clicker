@@ -1,4 +1,4 @@
-# Special button clicker
+# Special Button Clicker
 Way too often, I meet with math problems like this one:
 
 > Mathew has a special calculator, that has only the buttons x2, -7, +13, ÷3. In the beginning, there is the number 4 on the display. How can he display the number 5, using exactly 5 moves?
@@ -41,7 +41,7 @@ So, if we wanted the program to solve the math problem from the beginning, this 
 `$ python3 calculator_with_argparse.py 5 5 -s 4 -e 5 -r -f calculator_functions`
 
 ### Calculator.py
-Originally, I did not know `argparse` and solved the task in the standalone Python file `Calculator.py`. The functionality is the same.
+Originally, I did not know `argparse` and solved the task in the standalone Python file `calculator.py`. The functionality is the same.
 But it has the parameters set at the beginning of the code - to change them, you have to change the code.
 * The list `functions` is imported on the 5th line (defaultly from the file calculator_functions.py)
 * The other parameteres are set on the lines 8-13 (and are defaultly set to solve the math problem from the beginning)
