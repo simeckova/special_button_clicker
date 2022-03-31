@@ -16,7 +16,7 @@ assert step_max >= step_min, "step_max must not be smaller than step_min"
 assert steps_can_repeat or step_min <= len(functions), "repeat off - few steps"
 
 
-plans: List[Any] = []
+plans = []
 for step_num in range(step_min, step_max+1):
     if steps_can_repeat:
         plans += product(functions, repeat=step_num)

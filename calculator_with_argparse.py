@@ -27,7 +27,7 @@ assert args.steps_can_repeat or args.step_min <= len(functions), (
     "step_min bigger than amount of available steps, and step repetition off")
 
 
-plans: List[Any] = []
+plans = []
 for step_num in range(args.step_min, args.step_max+1):
     if args.steps_can_repeat:
         plans += product(functions, repeat=step_num)
