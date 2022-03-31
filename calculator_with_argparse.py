@@ -26,6 +26,7 @@ assert args.step_max >= args.step_min, (
 assert args.steps_can_repeat or args.step_min <= len(functions), (
     "step_min bigger than amount of available steps, and step repetition off")
 
+
 plans: List[Any] = []
 for step_num in range(args.step_min, args.step_max+1):
     if args.steps_can_repeat:
@@ -50,6 +51,7 @@ for plan in plans:
     elif n == args.ending_number:
         possible_steps[n] = steps
         break
+
 
 if args.ending_number is None:
     print(possible_outputs)

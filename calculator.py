@@ -8,12 +8,13 @@ from calculator_functions import functions
 # Start parameters:
 step_min: int = 1
 step_max: int = 2
-steps_can_repeat = True
 starting_number: float = 1
 ending_number: Optional[float] = None
+steps_can_repeat = True
 
 assert step_max >= step_min, "step_max must not be smaller than step_min"
 assert steps_can_repeat or step_min <= len(functions), "repeat off - few steps"
+
 
 plans: List[Any] = []
 for step_num in range(step_min, step_max+1):
@@ -38,6 +39,7 @@ for plan in plans:
             possible_steps[n] = steps
     elif n == ending_number:
         possible_steps[n] = steps
+
 
 if ending_number is None:
     print(possible_outputs)
