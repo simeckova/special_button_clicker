@@ -1,17 +1,17 @@
-def a(n: float) -> float:
+def times_2(n: float) -> float:
     return n * 2
 
 
-def b(n: float) -> float:
+def minus_7(n: float) -> float:
     return n - 7
 
 
-def c(n: float) -> float:
+def plus_13(n: float) -> float:
     return n + 13
 
 
-def d(n: float) -> float:
+def divide_by_3(n: float) -> float:
     return n // 3
 
 
-functions = [a, b, c, d]
+functions = [times_2, minus_7, plus_13, divide_by_3]
